@@ -5,11 +5,11 @@
  * Methods inside the Controller class re known as Actions
  */
 
-class Controller {
+class Products {
     public function index() {
-        require "model.php";
+        require "src/models/product.php";
 
-        $model = new Model;
+        $model = new Product;
 
         $products = $model->getData();
 
