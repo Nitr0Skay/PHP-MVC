@@ -1,1 +1,1 @@
-Test
+Show an individual product here
