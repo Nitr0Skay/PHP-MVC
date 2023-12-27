@@ -8,6 +8,10 @@
     $router->add("/products", ["controller" => "products", "action" => "index"]);
     $router->add("/", ["controller" => "home", "action" => "index"]);
 
+    $params = $router->match($path);
+    var_dump($params);
+    exit;
+
     $segments = explode("/", $path);
    
 
