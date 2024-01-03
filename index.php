@@ -17,7 +17,7 @@
     }
     
     $action = $params["action"];
-    $controller = $params["controller"];
+    $controller = "App\Controllers\\" . ucwords($params["controller"]);
 
     
 
