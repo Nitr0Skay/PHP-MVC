@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Controllers;
+
 /**
  * Function Inside the class are Methods
  * Methods inside the Controller class re known as Actions

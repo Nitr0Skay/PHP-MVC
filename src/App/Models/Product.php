@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 class Product {
     public function getData(): array {
         $dsn = "mysql:host=localhost;dbname=product_db;charset=utf8;post=3306";
