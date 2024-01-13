@@ -13,6 +13,8 @@ class Router {
     }
 
     public function match(string $path): array|bool {
+        $pattern = "";
+        
         foreach($this->routes as $route) {
             if($route["path"] === $path) {
 
