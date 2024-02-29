@@ -13,7 +13,7 @@ class Router {
     }
 
     public function match(string $path): array|bool {
-        $pattern = "";
+        $pattern = "#^/home/index$#";
         
         foreach($this->routes as $route) {
             if($route["path"] === $path) {
