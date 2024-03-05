@@ -5,7 +5,7 @@ namespace Framework;
 class Router {
     private array $routes = [];
 
-    public function add(string $path, array $params): void {
+    public function add(string $path, array $params = []): void {
         $this->routes[] = [
             "path" => $path,
             "params" => $params
@@ -13,20 +13,17 @@ class Router {
     }
 
     public function match(string $path): array|bool {
-        $pattern = "#^/(?<controller>[a-z]+)/(?<action>[a-z]+)$#";
-
-        if(preg_match($pattern, $path, $matches)) {
-            $matches = array_filter($matches, "is_string", ARRAY_FILTER_USE_KEY);
-            return $matches;
-        }
-        /*
         foreach($this->routes as $route) {
-            if($route["path"] === $path) {
+            $pattern = "#^/(?<controller>[a-z]+)/(?<action>[a-z]+)$#";
 
-                return $route["params"];
+            echo $pattern, "\n", $route["path"], "\n";
+
+            if(preg_match($pattern, $path, $matches)) {
+                $matches = array_filter($matches, "is_string", ARRAY_FILTER_USE_KEY);
+                return $matches;
             }
         }
-*/
+        
         return false;
     }
 }
