@@ -31,6 +31,8 @@ class Router {
         $route_path = trim($route_path, "/");
         $segments = explode("/", $route_path);
         $segments = array_map(function(string $segment): string {
+            preg_match("#^\{([a-z][a-z0-9]*)\}$#", $segment, $matches);
+            $segment = "(?<" . $matches[1] . ">[a-z]+)";
             return $segment;
         }, $segments);
         print_r($segments);
