@@ -35,7 +35,8 @@ class Router {
             $segment = "(?<" . $matches[1] . ">[a-z]+)";
             return $segment;
         }, $segments);
-        print_r($segments);
+        $pattern = "#^" . implode("/", $segments) . "$#";
+        echo $pattern, "\n";
     }
 }
 
